@@ -44,6 +44,14 @@ html {
 
 section {
     padding: 80px 0;
+    border-bottom: 1px dashed var(--gray-lighter);
+}
+
+/* Remove border from last section and specific sections */
+section:last-of-type,
+section.hero,
+section.final-cta {
+    border-bottom: none;
 }
 
 /* ===== Typography ===== */
@@ -374,6 +382,42 @@ h3 {
     color: var(--dark);
 }
 
+/* Hero Metrics - Social Proof */
+.hero-metrics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-top: 4px;
+}
+
+.metric-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--gray-lighter);
+}
+
 /* ===== Social Proof ===== */
 .social-proof {
     padding: 40px 0;
@@ -549,6 +593,7 @@ h3 {
 /* ===== How It Works ===== */
 .how-it-works {
     background: var(--white);
+    padding-top: 0px;
 }
 
 .steps {
@@ -655,6 +700,14 @@ h3 {
     border-radius: 16px;
     border: 2px solid var(--gray-lighter);
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-light);
 }
 
 .pricing-card.featured {
@@ -874,6 +927,35 @@ h3 {
     color: var(--white);
 }
 
+/* Security Badges */
+.security-badges {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin: 48px 0 32px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px dashed var(--dark-light);
+}
+
+.security-badges .badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-light);
+}
+
+.security-badges .badge-item svg {
+    color: var(--primary-light);
+}
+
+.security-badges .badge-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
 .footer-bottom {
     padding-top: 24px;
     border-top: 1px solid var(--dark-light);
@@ -1077,6 +1159,29 @@ h3 {
     border: 2px solid #fecaca;
     border-radius: 12px;
     padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Rotating accent colors inspired by Clay */
+.problem-card:nth-child(1) {
+    background: #fef3c7;
+    border-color: #fde047;
+}
+
+.problem-card:nth-child(2) {
+    background: #ffedd5;
+    border-color: #fdba74;
+}
+
+.problem-card:nth-child(3) {
+    background: #fce7f3;
+    border-color: #f9a8d4;
 }
 
 .problem-icon {
@@ -1220,9 +1325,7 @@ h3 {
 }
 
 /* Emotional Benefits */
-.emotional-benefits {
-    margin: 60px 0;
-}
+
 
 .emotional-benefits h3 {
     text-align: center;
@@ -1246,7 +1349,7 @@ h3 {
 
 .emotional-card:hover {
     border-color: var(--primary);
-    transform: translateY(-4px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -1462,7 +1565,7 @@ h3 {
 .feature-card:hover {
     border-color: var(--primary);
     box-shadow: var(--shadow-xl);
-    transform: translateY(-4px);
+    transform: translateY(-8px);
 }
 
 .feature-card.featured {
@@ -1724,6 +1827,24 @@ h3 {
         font-size: 0.9375rem;
     }
 
+    .hero-metrics {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .metric-divider {
+        display: none;
+    }
+
+    .metric-value {
+        font-size: 1.5rem;
+    }
+
+    .metric-label {
+        font-size: 0.75rem;
+    }
+
     .what-is-grid {
         grid-template-columns: 1fr;
     }
@@ -1775,6 +1896,16 @@ h3 {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+
+    .security-badges {
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 24px 16px;
+    }
+
+    .security-badges .badge-item span {
+        font-size: 0.75rem;
     }
 
     .footer-bottom {
