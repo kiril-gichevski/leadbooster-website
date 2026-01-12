@@ -30,8 +30,8 @@ window.addEventListener('scroll', () => {
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px 200px 0px' // Trigger 200px before element enters viewport
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -152,5 +152,46 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// FAQ collapsible on mobile
+function initFAQCollapsible() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    function toggleFAQ() {
+        // Only enable collapsible on mobile
+        if (window.innerWidth <= 768) {
+            faqItems.forEach(item => {
+                item.classList.add('collapsible');
+
+                // Close all by default on mobile
+                if (!item.classList.contains('active')) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Add click handlers
+            faqItems.forEach(item => {
+                const heading = item.querySelector('h3');
+                if (heading && !heading.dataset.listenerAdded) {
+                    heading.addEventListener('click', () => {
+                        item.classList.toggle('active');
+                    });
+                    heading.dataset.listenerAdded = 'true';
+                }
+            });
+        } else {
+            // Remove collapsible class on desktop
+            faqItems.forEach(item => {
+                item.classList.remove('collapsible');
+                item.classList.add('active');
+            });
+        }
+    }
+
+    toggleFAQ();
+    window.addEventListener('resize', toggleFAQ);
+}
+
+document.addEventListener('DOMContentLoaded', initFAQCollapsible);
 
 console.log('Lead Enricher website loaded successfully!');

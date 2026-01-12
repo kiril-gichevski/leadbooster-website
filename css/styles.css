@@ -177,6 +177,18 @@ h3 {
     color: var(--primary);
 }
 
+.btn-white {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.btn-white:hover {
+    background: var(--gray-lighter);
+    color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
 .btn-large {
     padding: 16px 32px;
     font-size: 1.125rem;
@@ -185,7 +197,6 @@ h3 {
 /* ===== Hero Section ===== */
 .hero {
     padding-top: 160px;
-    padding-bottom: 80px;
     background: linear-gradient(180deg, var(--gray-lighter) 0%, var(--white) 100%);
 }
 
@@ -741,6 +752,37 @@ h3 {
     font-size: 1.125rem;
 }
 
+.faq-item.collapsible h3 {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.faq-item.collapsible h3::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.collapsible.active h3::after {
+    content: '−';
+}
+
+.faq-item.collapsible p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+    margin-top: 0;
+}
+
+.faq-item.collapsible.active p {
+    max-height: 500px;
+    margin-top: 12px;
+}
+
 .faq-item p {
     color: var(--gray);
     line-height: 1.7;
@@ -1010,11 +1052,7 @@ h3 {
     }
 }
 
-/* ===== Why We're Different ===== */
-.why-different {
-    background: var(--white);
-    padding: 80px 0;
-}
+
 
 /* Problem Section */
 .problem-section {
@@ -1745,7 +1783,7 @@ h3 {
     }
 
     section {
-        padding: 60px 0;
+        padding: 30px 0;
     }
 
     /* Why Different Section */
