@@ -219,6 +219,13 @@ h3 {
 
 .hero-subtitle {
     font-size: 1.25rem;
+    color: var(--dark);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.hero-value {
+    font-size: 1.125rem;
     color: var(--gray);
     margin-bottom: 40px;
     line-height: 1.7;
@@ -256,6 +263,106 @@ h3 {
     font-size: 0.875rem;
     color: var(--gray);
     margin-top: 4px;
+}
+
+/* Hero Comparison Box */
+.hero-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 32px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.comparison-item {
+    flex: 1;
+    text-align: center;
+}
+
+.comparison-item.competitor-cost {
+    padding: 24px;
+    background: #fef2f2;
+    border: 3px solid #ef4444;
+    border-radius: 12px;
+}
+
+.comparison-item.our-cost {
+    padding: 24px;
+    padding-top: 36px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+    border: 3px solid var(--secondary);
+    border-radius: 12px;
+    position: relative;
+}
+
+.comparison-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.comparison-price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.comparison-price span {
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+.comparison-details {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-top: 8px;
+}
+
+.comparison-vs {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.savings-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.hero-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
 }
 
 /* ===== Social Proof ===== */
@@ -802,6 +909,362 @@ h3 {
     line-height: 1.6;
 }
 
+/* ===== No Credits Explainer ===== */
+.no-credits-explainer {
+    background: var(--gray-lighter);
+    padding: 80px 0;
+}
+
+.credits-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.comparison-column {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 16px;
+    border: 3px solid transparent;
+}
+
+.comparison-column.bad-way {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.comparison-column.our-way {
+    border-color: var(--secondary);
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+}
+
+.comparison-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+}
+
+.comparison-badge.negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.comparison-badge.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.comparison-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.comparison-list li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+.comparison-note {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.comparison-note strong {
+    color: var(--dark);
+}
+
+.no-credits-summary {
+    margin-top: 48px;
+    text-align: center;
+    padding: 32px;
+    background: var(--white);
+    border-radius: 16px;
+    border: 3px solid var(--primary);
+}
+
+.no-credits-summary h3 {
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.no-credits-summary p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .credits-comparison {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* ===== Why We're Different ===== */
+.why-different {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+/* Problem Section */
+.problem-section {
+    margin: 60px 0;
+}
+
+.problem-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #ef4444;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.problem-card {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.problem-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.problem-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.problem-card p {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Solution Section */
+.solution-section {
+    margin: 60px 0;
+    padding: 48px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+    border-radius: 16px;
+}
+
+.solution-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--secondary);
+}
+
+.two-bill-model {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.bill-card {
+    flex: 1;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px;
+    border: 3px solid transparent;
+}
+
+.bill-card.platform-bill {
+    border-color: var(--primary);
+}
+
+.bill-card.api-bill {
+    border-color: var(--secondary);
+}
+
+.bill-header {
+    margin-bottom: 16px;
+}
+
+.bill-number {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.api-bill .bill-number {
+    background: var(--secondary);
+}
+
+.bill-header h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.bill-price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin: 16px 0;
+}
+
+.bill-price span {
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+.bill-description {
+    color: var(--gray);
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.bill-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bill-includes li {
+    font-size: 0.9375rem;
+    color: var(--dark);
+    line-height: 1.5;
+}
+
+.plus-sign {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.bottom-line-box {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    border: 3px solid var(--primary);
+}
+
+.bottom-line-box h4 {
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.bottom-line-box p {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+}
+
+.vs-text {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+/* Emotional Benefits */
+.emotional-benefits {
+    margin: 60px 0;
+}
+
+.emotional-benefits h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.emotional-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.emotional-card {
+    background: var(--gray-lighter);
+    border-radius: 12px;
+    padding: 24px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.emotional-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.emotional-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.emotional-card h4 {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.emotional-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .problem-grid,
+    .emotional-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .problem-card,
+    .emotional-card {
+        padding: 20px;
+    }
+
+    .two-bill-model {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .bill-card {
+        padding: 24px;
+    }
+
+    .plus-sign {
+        transform: rotate(90deg);
+        margin: 8px 0;
+    }
+
+    .problem-section,
+    .solution-section,
+    .emotional-benefits {
+        margin: 40px 0;
+    }
+}
+
 /* ===== BYOK Explainer ===== */
 .byok-explainer {
     background: var(--white);
@@ -1194,6 +1657,37 @@ h3 {
         flex-direction: column;
     }
 
+    /* New Hero Comparison Box */
+    .hero-comparison {
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 16px;
+    }
+
+    .comparison-price {
+        font-size: 2rem;
+    }
+
+    .comparison-vs {
+        transform: rotate(90deg);
+        font-size: 1.25rem;
+    }
+
+    .savings-badge {
+        font-size: 0.625rem;
+        padding: 6px 12px;
+    }
+
+    .hero-benefits {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .benefit-item {
+        font-size: 0.9375rem;
+    }
+
     .what-is-grid {
         grid-template-columns: 1fr;
     }
@@ -1254,5 +1748,46 @@ h3 {
 
     section {
         padding: 60px 0;
+    }
+
+    /* Why Different Section */
+    .problem-title,
+    .solution-title,
+    .emotional-benefits h3 {
+        font-size: 1.5rem;
+    }
+
+    .problem-icon,
+    .emotional-icon {
+        font-size: 2rem;
+    }
+
+    .problem-card h4,
+    .emotional-card h4 {
+        font-size: 1rem;
+    }
+
+    .solution-section {
+        padding: 24px 16px;
+    }
+
+    .bill-price {
+        font-size: 2rem;
+    }
+
+    .bill-includes li {
+        font-size: 0.875rem;
+    }
+
+    .plus-sign {
+        font-size: 2rem;
+    }
+
+    .bottom-line-box {
+        padding: 16px;
+    }
+
+    .bottom-line-box p {
+        font-size: 1rem;
     }
 }
