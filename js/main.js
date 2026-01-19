@@ -83,14 +83,35 @@ pricingCards.forEach(card => {
     });
 });
 
-// Mobile menu toggle (if you add a hamburger menu later)
+// Mobile menu toggle
 function initMobileMenu() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
 
-    if (mobileMenuBtn && navLinks) {
+    if (mobileMenuBtn && mobileMenuOverlay) {
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 }
