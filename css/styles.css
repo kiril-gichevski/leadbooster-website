@@ -43,7 +43,7 @@ html {
 }
 
 section {
-    padding: 80px 0;
+    padding: 40px 0;
     border-bottom: 1px dashed var(--gray-lighter);
 }
 
@@ -206,7 +206,7 @@ h3 {
 
 /* ===== Hero Section ===== */
 .hero {
-    padding-top: 160px;
+    padding-top: 100px;
     background: linear-gradient(180deg, var(--gray-lighter) 0%, var(--white) 100%);
 }
 
@@ -1644,6 +1644,73 @@ h3 {
     flex-shrink: 0;
 }
 
+.cost-breakdown-wrapper {
+    display: block;
+    width: 100%;
+}
+
+.cost-breakdown-label {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--dark);
+    display: block;
+}
+
+.cost-breakdown {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    background: var(--gray-lighter);
+    border-radius: 8px;
+    margin-top: 0;
+}
+
+.cost-item {
+    text-align: center;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.cost-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+.cost-service {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.cost-service a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cost-service a:hover {
+    text-decoration: underline;
+}
+
+.cost-price {
+    font-size: 0.8125rem;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+.cost-plus {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+}
+
 /* ===== Step Note ===== */
 .step-note {
     margin-top: 12px;
@@ -2781,16 +2848,7 @@ h3 {
     color: var(--dark);
 }
 
-.comparison-table-v2 .recommended-badge {
-    display: inline-block;
-    background: var(--primary);
-    color: var(--white);
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
+
 
 /* Price styling */
 .comparison-table-v2 .price-negative {
@@ -2841,11 +2899,10 @@ h3 {
 @media (max-width: 768px) {
     .comparison-table-v2-wrapper {
         margin-top: 40px;
-        overflow-x: auto;
     }
 
     .comparison-table-v2 {
-        min-width: 500px;
+        width: 100%;
     }
 
     .comparison-table-v2 th,
@@ -2870,5 +2927,304 @@ h3 {
 
     .pricing-single-card .pricing-card.beta-card {
         padding: 28px;
+    }
+}
+
+/* ===== Small Mobile Devices (max-width: 480px) ===== */
+@media (max-width: 480px) {
+    /* Reduce container padding for more space */
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Typography scaling */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Section padding */
+    section {
+        padding: 40px 0;
+    }
+
+    /* Fix grids with minmax that exceed 344px */
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .props-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .what-is-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Collapse all two-column layouts */
+    .credits-comparison {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .emotional-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .byok-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cost-comparison-columns {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Reduce card padding */
+    .prop-card,
+    .faq-item,
+    .what-is-card,
+    .comparison-column,
+    .problem-card {
+        padding: 20px;
+    }
+
+    .pricing-card {
+        padding: 24px;
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+
+    /* Price and large text elements */
+    .comparison-price {
+        font-size: 2rem;
+    }
+
+    .price-amount {
+        font-size: 2.25rem;
+    }
+
+    .bill-price {
+        font-size: 2.25rem;
+    }
+
+    /* Hero section adjustments */
+    .hero-comparison {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .comparison-vs {
+        margin: 0;
+        padding: 8px 0;
+    }
+
+    .hero-metrics {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .metric-divider {
+        display: none;
+    }
+
+    /* Navigation adjustments */
+    .logo span {
+        font-size: 1.125rem;
+    }
+
+    /* Steps section */
+    .steps {
+        gap: 24px;
+    }
+
+    .step-number {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    /* Cost comparison box */
+    .cost-comparison-box {
+        padding: 16px;
+    }
+
+    .cost-column {
+        padding: 20px;
+    }
+
+    .cost-column h5 .comparison-logo {
+        height: 20px;
+    }
+
+    /* API costs grid */
+    .api-costs-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .api-cost-item {
+        padding: 12px;
+    }
+
+    /* Security badges */
+    .security-badges {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .badge-item {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    /* Comparison table - fully responsive */
+    .comparison-table-v2-wrapper {
+        overflow-x: visible;
+    }
+
+    .comparison-table-v2 {
+        min-width: 100%;
+        overflow: visible;
+    }
+
+    .comparison-table-v2 th,
+    .comparison-table-v2 td {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+    }
+
+    .comparison-table-v2 th.feature-col,
+    .comparison-table-v2 td.feature-name {
+        font-size: 0.8125rem;
+    }
+
+    .comparison-table-v2 th.clay-col .clay-header,
+    .comparison-table-v2 th.leadbooster-col .leadbooster-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .comparison-table-v2 th.clay-col .clay-favicon,
+    .comparison-table-v2 th.leadbooster-col .table-logo {
+        height: 16px;
+    }
+
+    .comparison-table-v2 th.clay-col .competitor-name,
+    .comparison-table-v2 th.leadbooster-col .brand-name {
+        font-size: 0.875rem;
+    }
+
+
+    .comparison-table-v2 .price-negative,
+    .comparison-table-v2 .price-positive {
+        font-size: 0.875rem;
+    }
+
+    .comparison-table-v2 td.clay-col > span,
+    .comparison-table-v2 td.leadbooster-col > span {
+        gap: 3px;
+        font-size: 0.75rem;
+    }
+
+    .comparison-table-v2 .icon-positive svg,
+    .comparison-table-v2 .icon-negative svg,
+    .comparison-table-v2 .icon-neutral svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Integration logos */
+    .integrations-logos {
+        gap: 16px;
+    }
+
+    .integration-logo {
+        height: 20px;
+    }
+
+    /* Footer adjustments */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* CTA buttons */
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .btn-large {
+        padding: 14px 24px;
+        font-size: 0.9375rem;
+    }
+
+    /* Cost breakdown responsive */
+    .cost-breakdown {
+        grid-template-columns: 1fr;
+        gap: 0px;
+        padding: 12px;
+    }
+
+    .cost-logo {
+        height: 24px;
+    }
+
+    .cost-item {
+        gap: 6px;
+    }
+
+    .cost-service {
+        font-size: 0.875rem;
+    }
+
+    .cost-price {
+        font-size: 0.75rem;
+    }
+
+    .cost-plus {
+        font-size: 1rem;
+        padding: 4px 0;
+    }
+
+    .cost-breakdown-label {
+        font-size: 0.9375rem;
     }
 }

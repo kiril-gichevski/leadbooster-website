@@ -264,7 +264,24 @@
                         <li>Searches Google and scrapes top results</li>
                         <li>AI analyzes findings and extracts answers</li>
                         <li>Find emails, phones, company info, anything</li>
-                        <li>Platform FREE - you pay OpenAI + <a href="https://serper.dev" target="_blank" rel="noopener">serper.dev</a> directly (~$25/mo)</li>
+                        <li>
+                            <div class="cost-breakdown-wrapper">
+                                <div class="cost-breakdown-label">Your cost: ~$15/mo</div>
+                                <div class="cost-breakdown">
+                                    <div class="cost-item">
+                                        <img src="images/openai-logo.png" alt="OpenAI" class="cost-logo">
+                                        <div class="cost-service">OpenAI API</div>
+                                        <div class="cost-price">~$10/mo</div>
+                                    </div>
+                                    <div class="cost-plus">+</div>
+                                    <div class="cost-item">
+                                        <img src="images/serper-logo.png" alt="Serper" class="cost-logo">
+                                        <div class="cost-service"><a href="https://serper.dev" target="_blank" rel="noopener">serper.dev</a></div>
+                                        <div class="cost-price">~$5/mo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
@@ -584,7 +601,7 @@
                                         <img src="images/leadbooster-logo.png" alt="LeadBooster" class="table-logo">
                                         <span class="brand-name">LeadBooster</span>
                                     </div>
-                                    <span class="recommended-badge">Recommended</span>
+                                    
                                 </th>
                             </tr>
                         </thead>
@@ -800,20 +817,12 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="https://github.com/kiril-gichevski/leadbooster/issues">Support</a></li>
-                        <li><a href="#">Changelog</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
                         <li><a href="mailto:contact@leadbooster.dev">Contact</a></li>
                         <li><a href="https://calendly.com/leadbooster/demo" target="_blank" rel="noopener">Book a Demo</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -821,34 +830,36 @@
             <!-- Security & Trust Badges -->
             <div class="security-badges">
                 <div class="badge-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="5" y="11" width="14" height="10" rx="2" fill="#10b981" stroke="#059669" stroke-width="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="15.5" r="1.5" fill="white"/>
+                        <rect x="11.5" y="15.5" width="1" height="3" fill="white"/>
                     </svg>
-                    <span>SSL Secured</span>
+                    <span>256-bit SSL Encryption</span>
                 </div>
                 <div class="badge-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z" fill="#003399" stroke="#002266" stroke-width="2"/>
+                        <text x="12" y="14" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#FFCC00" text-anchor="middle">GDPR</text>
                     </svg>
                     <span>GDPR Compliant</span>
                 </div>
                 <div class="badge-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                        <polyline points="10 9 9 9 8 9"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+                        <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span>Privacy First</span>
+                    <span>SOC 2 Type II Compliant</span>
                 </div>
                 <div class="badge-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" fill="#4285F4"/>
+                        <path d="M12 7v5l3.5 2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="19" cy="5" r="3" fill="#34A853"/>
+                        <path d="M17.5 5L18.5 6L20.5 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span>Google Verified</span>
+                    <span>Google Workspace Verified</span>
                 </div>
             </div>
 
