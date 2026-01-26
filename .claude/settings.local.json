@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ciro.io)",
+      "WebFetch(domain:www.ciro.io)",
+      "WebFetch(domain:www.ycombinator.com)",
+      "Bash(grep:*)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(node:*)",
+      "Bash(npm run deploy:*)",
+      "WebFetch(domain:datagmaapi.readme.io)",
+      "WebFetch(domain:www.clay.com)",
+      "WebFetch(domain:www.zoominfo.com)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)"
+    ],
+    "deny": []
+  },
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.5-air",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.7"
+  }
+}
