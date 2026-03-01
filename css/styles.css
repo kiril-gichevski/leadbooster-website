@@ -44,14 +44,32 @@ html {
 
 section {
     padding: 40px 0;
-    border-bottom: 1px dashed var(--gray-lighter);
 }
 
-/* Remove border from last section and specific sections */
-section:last-of-type,
+
+
+/* Hero and final CTA keep their gradients */
 section.hero,
 section.final-cta {
-    border-bottom: none;
+    background: linear-gradient(180deg, var(--gray-lighter) 0%, var(--white) 100%);
+}
+
+section.final-cta {
+    background: var(--gradient);
+}
+
+/* Sections that should always be white */
+section.testimonials,
+section.demo {
+    background: var(--white);
+}
+
+/* Sections that should always be gray */
+section.integrations, 
+section.quick-comparison,
+section.features,
+section.how-it-works{
+    background: var(--gray-lighter);
 }
 
 /* ===== Typography ===== */
@@ -458,7 +476,7 @@ h3 {
 
 /* ===== Value Props ===== */
 .value-props {
-    background: var(--white);
+    /* Background handled by alternating sections */
 }
 
 .props-grid {
@@ -527,7 +545,7 @@ h3 {
 
 /* ===== Comparison Section ===== */
 .comparison {
-    background: var(--gray-lighter);
+    /* Background handled by alternating sections */
 }
 
 .comparison-table {
@@ -601,7 +619,6 @@ h3 {
 /* ===== How It Works ===== */
 .how-it-works {
     background: var(--white);
-    padding-top: 0px;
 }
 
 .steps {
@@ -657,7 +674,7 @@ h3 {
 
 /* ===== Demo Section ===== */
 .demo {
-    background: var(--dark);
+    background: var(--dark) !important;
     color: var(--white);
 }
 
@@ -695,7 +712,7 @@ h3 {
 
 /* ===== Pricing Section ===== */
 .pricing {
-    background: var(--gray-lighter);
+    /* Background handled by alternating sections */
 }
 
 .pricing-grid {
@@ -804,7 +821,7 @@ h3 {
 
 /* ===== FAQ Section ===== */
 .faq {
-    background: var(--white);
+    /* Background handled by alternating sections */
 }
 
 .faq-grid {
@@ -1101,7 +1118,7 @@ h3 {
 
 /* ===== What Is Section ===== */
 .what-is {
-    background: var(--gray-lighter);
+    /* Background handled by alternating sections */
 }
 
 .what-is-grid {
@@ -1654,7 +1671,7 @@ h3 {
 
 /* ===== Features Section Updates ===== */
 .features {
-    background: var(--gray-lighter);
+    /* Background handled by alternating sections */
 }
 
 .features-grid {
@@ -2274,7 +2291,7 @@ h3 {
 
 /* ===== NEW: Testimonials Section ===== */
 .testimonials {
-    background: var(--white);
+    /* Background handled by alternating sections */
 }
 
 .testimonials-grid {
@@ -2371,9 +2388,6 @@ h3 {
 
 /* ===== Integration Logos Section ===== */
 .integrations {
-    padding-top: 20px;
-    padding-bottom: 0;
-    background: var(--gray-lighter);
     text-align: center;
 }
 
@@ -2441,6 +2455,162 @@ h3 {
     color: var(--gray);
     font-size: 0.875rem;
     margin-top: 12px;
+}
+
+/* ===== Quick Comparison Section ===== */
+.quick-comparison {
+    background: var(--white);
+}
+
+.quick-comparison .comparison-table-v2 {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quick-comparison .comparison-table-v2 th.manual-col,
+.quick-comparison .comparison-table-v2 td.manual-col {
+    background: var(--gray-lighter);
+    color: var(--gray);
+}
+
+.quick-comparison .text-muted {
+    color: var(--gray);
+}
+
+.quick-comparison .text-negative {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.quick-comparison .text-positive {
+    color: #059669;
+    font-weight: 600;
+}
+
+.quick-comparison .highlight-green {
+    color: #059669;
+    font-weight: 700;
+}
+
+/* ===== Simple Pricing Section ===== */
+.simple-pricing {
+    /* Background handled by alternating sections */
+}
+
+.pricing-equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.equation-item {
+    text-align: center;
+    min-width: 140px;
+}
+
+.equation-label {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.equation-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1;
+}
+
+.equation-value span {
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+.equation-note {
+    font-size: 0.8125rem;
+    color: var(--gray);
+    margin-top: 8px;
+}
+
+.equation-plus {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.equation-item.result .equation-value {
+    color: var(--secondary);
+}
+
+.equation-item.result .equation-note {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.pricing-note-text {
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.9375rem;
+    margin-bottom: 32px;
+}
+
+.pricing-cta {
+    text-align: center;
+}
+
+/* ===== More Features Section ===== */
+.more-features-section {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.btn-expand-features {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--white);
+    border: 2px solid var(--gray-lighter);
+    border-radius: 8px;
+    color: var(--dark);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-expand-features:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--gray-lighter);
+}
+
+.more-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+/* ===== Feature Card Large ===== */
+.feature-card.large {
+    grid-column: span 1;
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-card.large {
+        grid-column: span 1;
+    }
 }
 
 /* ===== Comparison Table ===== */
@@ -3694,5 +3864,45 @@ h3 {
 
     .academy-cta h3 {
         font-size: 1.5rem;
+    }
+
+    /* New sections responsive */
+    .quick-comparison {
+        padding: 24px 0;
+    }
+
+    .quick-comparison .comparison-table-v2 {
+        overflow-x: auto;
+    }
+
+    .quick-comparison .comparison-table-v2 th.manual-col,
+    .quick-comparison .comparison-table-v2 td.manual-col {
+        display: none;
+    }
+
+    .pricing-equation {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .equation-value {
+        font-size: 2rem;
+    }
+
+    .equation-plus {
+        transform: rotate(90deg);
+    }
+
+    .equation-item {
+        min-width: auto;
+    }
+
+    .more-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr !important;
     }
 }
