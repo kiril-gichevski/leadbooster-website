@@ -100,7 +100,7 @@ function createFooter(relativePath = '') {
                     <h4>Company</h4>
                     <ul>
                         <li><a href="mailto:contact@leadbooster.dev">Contact</a></li>
-                        <li><a href="https://calendly.com/leadbooster/demo" target="_blank" rel="noopener">Book a Demo</a></li>
+                        <li><a href="https://calendly.com/contact-leadbooster/30min" target="_blank" rel="noopener">Book a Demo</a></li>
                         <li><a href="${relativePath}privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="${relativePath}terms-and-conditions.html">Terms of Service</a></li>
                     </ul>

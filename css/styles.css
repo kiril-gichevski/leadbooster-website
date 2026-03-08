@@ -251,13 +251,12 @@ h3 {
 
 .mobile-menu-overlay {
     display: none;
-    position: fixed;
+    height: 1200px;
     inset: 0;
     background: rgba(6, 11, 20, 0.97);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     z-index: 999;
-    padding-top: 80px;
 }
 
 .mobile-menu-overlay.active {
