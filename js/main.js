@@ -22,37 +22,12 @@ window.addEventListener('scroll', () => {
     if (currentScroll <= 0) {
         navbar.style.boxShadow = 'none';
     } else {
-        navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 1px 0 rgba(255,255,255,0.06)';
     }
 
     lastScroll = currentScroll;
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.05,
-    rootMargin: '0px 0px 200px 0px' // Trigger 200px before element enters viewport
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Apply fade-in animation to sections
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
-    });
-});
 
 // Track CTA clicks (you can replace this with your analytics)
 document.querySelectorAll('.btn-primary').forEach(btn => {
@@ -70,18 +45,6 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     });
 });
 
-// Pricing card hover effect
-const pricingCards = document.querySelectorAll('.pricing-card:not(.featured)');
-pricingCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px)';
-        this.style.transition = 'transform 0.3s ease';
-    });
-
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
 
 // Mobile menu toggle
 function initMobileMenu() {
@@ -214,5 +177,20 @@ function initFAQCollapsible() {
 }
 
 document.addEventListener('DOMContentLoaded', initFAQCollapsible);
+
+function initExpandFeatures() {
+    const btn = document.getElementById('expandFeaturesBtn');
+    const grid = document.getElementById('moreFeaturesGrid');
+    if (!btn || !grid) return;
+
+    btn.addEventListener('click', function () {
+        const isHidden = window.getComputedStyle(grid).display === 'none';
+        grid.style.display = isHidden ? 'grid' : 'none';
+        this.innerHTML = isHidden
+            ? 'Show less <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 10L8 6L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            : 'See all features <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    });
+}
+document.addEventListener('DOMContentLoaded', initExpandFeatures);
 
 console.log('Lead Enricher website loaded successfully!');
