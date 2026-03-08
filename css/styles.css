@@ -1278,6 +1278,10 @@ h3 {
     gap: 24px;
 }
 
+.problem-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .problem-card {
     background: #fef2f2;
     border: 2px solid #ef4444;
@@ -2411,15 +2415,8 @@ h3 {
 .integration-logo {
     height: 32px;
     width: auto;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-    filter: grayscale(100%);
 }
 
-.integration-logo:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-}
 
 .integrations-count {
     color: var(--gray);
@@ -2562,6 +2559,85 @@ h3 {
 
 .pricing-cta {
     text-align: center;
+}
+
+/* ===== Pricing Cards (Solo / Agency) ===== */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pricing-card.pricing-card--solo {
+    border: 2px solid var(--gray-light);
+    background: var(--white);
+    padding: 32px;
+}
+
+.pricing-card.pricing-card--agency {
+    border: 2px solid var(--secondary);
+    background: rgba(16, 185, 129, 0.05);
+    padding: 32px;
+}
+
+.pricing-card--agency .pricing-badge {
+    background: var(--secondary);
+}
+
+.pricing-plan {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+}
+
+.pricing-price span {
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.pricing-card--agency .pricing-price span {
+    opacity: 0.85;
+}
+
+.pricing-card-desc {
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+.pricing-card--agency .pricing-card-desc {
+    opacity: 0.9;
+}
+
+.pricing-card-cta {
+    margin-top: 18px;
+}
+
+.pricing-card-cta .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.pricing-card-cta-note {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.8125rem;
+    opacity: 0.75;
+}
+
+.pricing-card--agency .pricing-card-cta-note {
+    opacity: 0.8;
+}
+
+.pricing-cards ~ .pricing-note-text {
+    margin-top: 18px;
+    opacity: 0.8;
 }
 
 /* ===== More Features Section ===== */
