@@ -22,35 +22,24 @@ window.addEventListener('scroll', () => {
     if (currentScroll <= 0) {
         navbar.style.boxShadow = 'none';
     } else {
-        navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 1px 0 rgba(255,255,255,0.06)';
     }
 
     lastScroll = currentScroll;
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.05,
-    rootMargin: '0px 0px 200px 0px' // Trigger 200px before element enters viewport
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Apply fade-in animation to sections
+// Scroll reveal — drives [data-reveal] elements
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+        revealObserver.observe(el);
     });
 });
 
