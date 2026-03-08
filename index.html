@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body data-relative-path="">
     <div id="navbar-placeholder"></div>
@@ -567,15 +569,6 @@
 
     <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        document.getElementById('expandFeaturesBtn').addEventListener('click', function() {
-            const grid = document.getElementById('moreFeaturesGrid');
-            const isHidden = grid.style.display === 'none';
-            grid.style.display = isHidden ? 'grid' : 'none';
-            this.innerHTML = isHidden
-                ? 'Show less <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 10L8 6L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-                : 'See all features <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        });
-    </script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
