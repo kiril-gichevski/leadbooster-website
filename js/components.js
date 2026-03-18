@@ -14,7 +14,7 @@ function createNavbar(relativePath = '') {
                     <li><a href="${relativePath}index.html#features">Features</a></li>
                     <li><a href="${relativePath}index.html#pricing">Pricing</a></li>
                     <li><a href="${relativePath}index.html#demo">Demo</a></li>
-                    <!-- <li><a href="${relativePath}academy.html">Academy</a></li> -->
+                    <li><a href="${relativePath}academy.html">Academy</a></li>
                 </ul>
                 <div class="nav-cta">
                     <a href="https://workspace.google.com/marketplace/app/leadbooster/96942350094?flow_type=2" class="btn btn-primary">Start Free</a>
@@ -92,7 +92,7 @@ function createFooter(relativePath = '') {
                         <li><a href="${relativePath}index.html#features">Features</a></li>
                         <li><a href="${relativePath}index.html#pricing">Pricing</a></li>
                         <li><a href="${relativePath}index.html#demo">Demo</a></li>
-                        <!-- <li><a href="${relativePath}academy.html">Academy</a></li> -->
+                        <li><a href="${relativePath}academy.html">Academy</a></li>
                     </ul>
                 </div>
 

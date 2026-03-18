@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to connect HubSpot to LeadBooster - Create a HubSpot Private App and add your access token in minutes.">
+    <title>How to Connect HubSpot - LeadBooster Academy</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/leadbooster-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/leadbooster-logo.png">
+    <link rel="apple-touch-icon" href="../images/leadbooster-logo.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body data-relative-path="../">
+    <!-- Navbar (loaded via JS) -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="tutorial-page">
+        <a href="../academy.html" class="back-link">← Back to Academy</a>
+
+        <div class="tutorial-header">
+            <span class="tutorial-category">Integration</span>
+            <h1>How to Connect HubSpot</h1>
+            <p>Create a HubSpot Private App and add your access token in minutes</p>
+        </div>
+
+        <!-- Tutorial Content -->
+        <div class="tutorial-content">
+            <h2>Overview</h2>
+            <p>To push enriched leads from LeadBooster directly into HubSpot, you need to create a Private App in HubSpot and generate an access token. This token lets LeadBooster securely read and write contacts, companies, deals, and leads to your CRM.</p>
+            <p>The whole process takes about 5 minutes. Follow the steps below — each one includes a screenshot.</p>
+
+            <!-- Step-by-Step Guide -->
+            <div class="tutorial-steps">
+
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Go to Development → Legacy Apps</h3>
+                        <p>In your HubSpot account, click the <strong>Settings</strong> icon in the top navigation bar. In the left sidebar, find <strong>Integrations</strong> and click on <strong>Legacy Apps</strong>.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/1.png" alt="HubSpot settings sidebar showing Development and Legacy Apps navigation">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Click "Create a Legacy App"</h3>
+                        <p>On the Legacy Apps page, click the <strong>"Create a legacy app"</strong> button to start setting up a new integration.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/2.png" alt="Legacy Apps page with Create a legacy app button">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Choose "Private App"</h3>
+                        <p>When prompted to select the app type, choose <strong>Private</strong>. This creates a direct token-based integration — no OAuth flow required.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/3.png" alt="App type selection with Private app option highlighted">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Add a Name</h3>
+                        <p>Give your app a recognizable name like <strong>"LeadBooster Integration"</strong>. This is only visible inside your HubSpot account. You can optionally add a logo and description.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/4.png" alt="App name input field in HubSpot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Add Required Scopes</h3>
+                        <p>Switch to the <strong>Scopes</strong> tab. Search for and enable each of the following permissions. LeadBooster needs these to read and write CRM data on your behalf.</p>
+                        <div class="scope-grid">
+                            <span class="scope-tag">crm.objects.contacts.read</span>
+                            <span class="scope-tag">crm.objects.contacts.write</span>
+                            <span class="scope-tag">crm.objects.companies.read</span>
+                            <span class="scope-tag">crm.objects.companies.write</span>
+                            <span class="scope-tag">crm.objects.deals.read</span>
+                            <span class="scope-tag">crm.objects.deals.write</span>
+                            <span class="scope-tag">crm.objects.owners.read</span>
+                            <span class="scope-tag">crm.objects.leads.read</span>
+                            <span class="scope-tag">crm.objects.leads.write</span>
+                            <span class="scope-tag">crm.objects.orders.read</span>
+                            <span class="scope-tag">crm.objects.orders.write</span>
+                        </div>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/5.png" alt="HubSpot scopes tab with required permissions enabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Create the App</h3>
+                        <p>Click the <strong>"Create app"</strong> button in the top right. A confirmation dialog will appear listing all the scopes you selected — review them and confirm to proceed.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/6.png" alt="Create app button and permissions confirmation dialog">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>Copy Your Access Token</h3>
+                        <p>Once the app is created, HubSpot will display your <strong>access token</strong>. Click <strong>"Copy"</strong> to copy it to your clipboard. Treat this token like a password — do not share it publicly.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/7.png" alt="HubSpot access token page with copy button">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h3>Paste Your Token in LeadBooster</h3>
+                        <p>Open LeadBooster in Google Sheets. Go to <strong>Settings → Integrations → HubSpot</strong> and paste your access token into the field. Click <strong>Save</strong> — your connection is now live.</p>
+                        <div class="step-screenshot">
+                            <img src="../images/academy/hubspot/8.png" alt="LeadBooster settings showing the HubSpot token input field">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h2>What You Can Do Now</h2>
+            <p>With HubSpot connected, LeadBooster can:</p>
+            <ul>
+                <li><strong>Push enriched contacts</strong> directly into HubSpot as Contacts and Companies</li>
+                <li><strong>Create and update deals</strong> based on your workflow enrichment results</li>
+                <li><strong>Sync lead data</strong> without leaving Google Sheets</li>
+                <li><strong>Run conditional workflows</strong> that only push qualified leads — saving API credits</li>
+            </ul>
+
+            <h2>Troubleshooting</h2>
+            <p>If LeadBooster shows a connection error after adding the token:</p>
+            <ul>
+                <li>Make sure all required scopes are enabled — even one missing scope can cause failures</li>
+                <li>Check that you copied the full token with no extra spaces</li>
+                <li>Verify your HubSpot account has admin permissions to create Private Apps</li>
+                <li>If the token stops working, you can regenerate it from the same Private App page in HubSpot</li>
+                <li>Contact us at <a href="mailto:contact@leadbooster.dev">contact@leadbooster.dev</a> if you're still stuck</li>
+            </ul>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="tutorial-cta">
+            <h3>Ready to Push Leads to HubSpot?</h3>
+            <p>Install LeadBooster and start syncing enriched contacts directly into your CRM.</p>
+            <a href="https://workspace.google.com/marketplace/app/leadbooster/96942350094?flow_type=2" class="btn btn-primary btn-large">
+                Install LeadBooster Free
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer (loaded via JS) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="https://workspace.google.com/marketplace/app/leadbooster/96942350094?flow_type=2" class="btn btn-primary">
+            Install Free
+        </a>
+    </div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Lightbox -->
+    <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;">
+        <img id="lightbox-img" src="" alt="" style="max-width:92vw;max-height:92vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,0.8);object-fit:contain;">
+        <button id="lightbox-close" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:#E4EAFF;font-size:1.25rem;width:40px;height:40px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;">✕</button>
+    </div>
+    <script>
+        (function () {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const lbClose = document.getElementById('lightbox-close');
+
+            document.querySelectorAll('.step-screenshot img').forEach(function (img) {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', function () {
+                    lbImg.src = img.src;
+                    lbImg.alt = img.alt;
+                    lb.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLb() {
+                lb.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            lbClose.addEventListener('click', closeLb);
+            lb.addEventListener('click', function (e) {
+                if (e.target === lb) closeLb();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeLb();
+            });
+        })();
+    </script>
+</body>
+</html>
