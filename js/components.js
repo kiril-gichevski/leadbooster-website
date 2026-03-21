@@ -65,7 +65,7 @@ function createFooter(relativePath = '') {
                 </a>
                 <p class="footer-calendly-label">— or book a call directly —</p>
                 <div class="footer-calendly-card">
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/contact-leadbooster/30min?hide_gdpr_banner=1&background_color=0a0a0f&text_color=e8e8e8&primary_color=b3ff59" style="min-width:280px;height:700px;overflow:hidden;"></div>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/contact-leadbooster/intro?hide_gdpr_banner=1&background_color=0a0a0f&text_color=e8e8e8&primary_color=b3ff59" style="min-width:280px;height:700px;overflow:hidden;"></div>
                 </div>
             </div>
 
@@ -93,7 +93,7 @@ function createFooter(relativePath = '') {
                     <h4>Company</h4>
                     <ul>
                         <li><a href="mailto:contact@leadbooster.dev">Contact</a></li>
-                        <li><a href="https://calendly.com/contact-leadbooster/30min" target="_blank" rel="noopener">Book a Demo</a></li>
+                        <li><a href="https://calendly.com/contact-leadbooster/intro" target="_blank" rel="noopener">Book a Demo</a></li>
                         <li><a href="${relativePath}privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="${relativePath}terms-and-conditions.html">Terms of Service</a></li>
                     </ul>
